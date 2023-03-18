@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     chrome.storage.sync.get(
-      ["firstName", "lastName", "healthCardNumber", "dob", "height", "weight"],
+      ["firstName", "lastName", "healthCardNumber", "dob", "height", "weight", "streetAddress", "city", "postal"],
       (result) => {
         document.getElementById("firstName").value = result.firstName || ""; // sets value of html element firstName to result.firstName
         document.getElementById("lastName").value = result.lastName || "";
@@ -8,6 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("dob").value = result.dob|| "";
         document.getElementById("height").value = result.height || "";
         document.getElementById("weight").value = result.weight || "";
+        document.getElementById("streetAddress").value = result.streetAddress || "";
+        document.getElementById("city").value = result.city || "";
+        document.getElementById("postal").value = result.postal || "";
 
       }
     );
@@ -22,9 +25,12 @@ document.addEventListener("DOMContentLoaded", () => {
       const dob = document.getElementById("dob").value;
       const height = document.getElementById("height").value;
       const weight = document.getElementById("weight").value;
+      const streetAddress = document.getElementById("streetAddress").value;
+      const city = document.getElementById("city").value;
+      const postal = document.getElementById("postal").value;
 
   
-      chrome.storage.sync.set({ firstName, lastName, healthCardNumber, dob, height, weight});
+      chrome.storage.sync.set({ firstName, lastName, healthCardNumber, dob, height, weight, streetAddress, city, postal});
     });
   
     document.getElementById("autofillButton").addEventListener("click", () => {

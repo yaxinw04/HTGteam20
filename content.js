@@ -3,7 +3,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.action === "autofill") {
       // retrieves data under firstName and lastName keys, data is object with the keys and their values
       chrome.storage.sync.get(
-        ["firstName", "lastName", "healthCardNumber", "dob", "height", "weight"],
+        ["firstName", "lastName", "healthCardNumber", "dob", "height", "weight", "streetAddress", "city", "postal"],
         (data) => {
           // Find the input fields in the form
           const firstNameInput = document.getElementById("input_2_68_3");
@@ -11,7 +11,10 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
           const healthCardNumberInput = document.getElementById("input_2_2");
           const dobInput = document.getElementById("input_2_14");
           const heightInput = document.getElementById("input_2_15");
-          const weightInput = document.getElementById("input_2_16")
+          const weightInput = document.getElementById("input_2_16");
+          const streetAddressInput = document.getElementById("input_2_18");
+          const cityInput = document.getElementById("input_2_19");
+          const postalInput = document.getElementById("input_2_20");
   
           // Autofill the input fields
           // if firstNameInput is html element, it sets the value of firstName to data.firstName
@@ -21,7 +24,9 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
           if (dobInput) dobInput.value = data.dob || "";
           if (heightInput) heightInput.value = data.height || "";
           if (weightInput) weightInput.value = data.weight || "";
-
+          if (streetAddressInput) streetAddressInput.value = data.streetAddress || "";
+          if (cityInput) cityInput.value = data.city || "";
+          if (postalInput) postalInput.value = data.postal || "";
         }
       );
     }
