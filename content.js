@@ -3,18 +3,21 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.action === "autofill") {
       // retrieves data under firstName and lastName keys, data is object with the keys and their values
       chrome.storage.sync.get(
-        ["firstName", "lastName", "healthCardNumber"],
+        ["firstName", "lastName", "healthCardNumber", "dob"],
         (data) => {
           // Find the input fields in the form
           const firstNameInput = document.getElementById("input_2_68_3");
           const lastNameInput = document.getElementById("input_2_68_6");
           const healthCardNumberInput = document.getElementById("input_2_2");
+          const dobInput = document.getElementById("input_2_14");
   
           // Autofill the input fields
           // if firstNameInput is html element, it sets the value of firstName to data.firstName
           if (firstNameInput) firstNameInput.value = data.firstName || "";
           if (lastNameInput) lastNameInput.value = data.lastName || "";
           if (healthCardNumberInput) healthCardNumberInput.value = data.healthCardNumber || "";
+          if (dobInput) dobInput.value = data.dob || "";
+
         }
       );
     }
