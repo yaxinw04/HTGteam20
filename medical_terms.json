@@ -9,38 +9,117 @@
       "definition": "Something that is used to treat, manage, or prevent medical conditions.",
       "image": ""
     },
+    {
+      "term": "Angina", 
+      "definition": "Chest pain or discomfort that you feel when there is not enough blood flowing to your heart.", 
+      "image": ""
+    },
+    {
+      "term": "Asthma", 
+      "definition": "A long-term disease that leads the airways to your lungs to swell, making it hard to breathe.", 
+      "image": ""
+    },
+    {
+      "term": "Anaesthetic", 
+      "definition": "A drug that reduces pain or that puts you to sleep as during surgery.", 
+      "image": ""
+    },
     
-    {"term": "Angina", "definition": "Chest pain or discomfort that you feel when there is not enough blood flowing to your heart.", "image": ""},
-    {"term": "Asthma", "definition": "A long-term disease that leads the airways to your lungs to swell, making it hard to breathe.", "image": ""},
-    {"term": "Anaesthetic", "definition": "A drug that reduces pain or that puts you to sleep as during surgery.", "image": ""},
+    {
+      "term": "Blood Thinners", 
+      "definition": "Medicines that help blood flow smoothly without blood clots.", 
+      "image": ""
+    },
     
-    {"term": "Blood Thinners", "definition": "Medicines that help blood flow smoothly without blood clots.", "image": ""},
-    
-    {"term": "Deep Vein Thrombosis", "definition": "A blood clot that forms in a vein deep in your body.", "image": ""},
-    {"term": "DVT", "definition": "A blood clot that forms in a vein deep in your body."},
-    {"term": "Dialysis", "definition": "A treatment that does the work of your kidneys when they can\"t.", "image": ""},
+    {
+      "term": "Deep Vein Thrombosis", 
+      "definition": "A blood clot that forms in a vein deep in your body.", 
+      "image": ""
+    },
+    {
+      "term": "DVT", 
+      "definition": "A blood clot that forms in a vein deep in your body."
+    },
+    {
+      "term": "Dialysis", 
+      "definition": "A treatment that does the work of your kidneys when they can\"t.", 
+      "image": ""},
 
-    {"term": "Latex Allergy", "definition": "An abnormal reaction of the immune system to natural, rubber latex.", "image": ""},
+    {
+      "term": "Latex Allergy", 
+      "definition": "An abnormal reaction of the immune system to natural, rubber latex.", 
+      "image": ""
+    },
 
-    {"term": "Hypertension", "definition": "High blood pressure", "image": ""},
+    {
+      "term": "Hypertension", 
+      "definition": "High blood pressure", 
+      "image": ""},
 
-    {"term": "immunization", "definition": "Giving a person a vaccine to protect them against a disease.", "image": ""},
+    {
+      "term": "immunization", 
+      "definition": "Giving a person a vaccine to protect them against a disease.", 
+      "image": ""},
 
-    {"term": "Malignant Hyperthermia", "definition": "A severe reaction to certain drugs used to reduce pain or put you to sleep (ie. anesthesia).", "image": ""},
-    {"term": "Medication", "definition": "Medicine; substances used to treat, manage, or prevent medical conditions.", "image": ""},
-    {"term": "medical condition", "definition": "Any kind of illness that can affect your mood, thinking, or how you act.", "image": ""},
+    {
+      "term": "Malignant Hyperthermia", 
+      "definition": "A severe reaction to certain drugs used to reduce pain or put you to sleep (ie. anesthesia).", 
+      "image": ""
+    },
+    {
+      "term": "Medication", 
+      "definition": "Medicine; substances used to treat, manage, or prevent medical conditions.", 
+      "image": ""
+    },
+    {
+      "term": "medical condition", 
+    "definition": "Any kind of illness that can affect your mood, thinking, or how you act.", 
+    "image": ""
+    },
     
-    {"term": "Physician", "definition": "A doctor.", "image": ""},
-    {"term": "prescribed", "definition": "An order from your doctor, nurse, or physician assistant for drugs or other treatment.", "image": ""},
-    {"term": "Pulmonary Embolism", "definition": "When a blood clot blocks in an artery in your lung suddenly.", "image": ""},
+    {
+      "term": "Physician", 
+    "definition": "A doctor.", 
+    "image": ""
+    },
+    {
+      "term": "prescribed", 
+    "definition": "An order from your doctor, nurse, or physician assistant for drugs or other treatment.", 
+    "image": ""
+    },
+    {
+      "term": "Pulmonary Embolism", 
+      "definition": "When a blood clot blocks in an artery in your lung suddenly.", 
+      "image": ""
+    },
     
-    {"term": "Referring Doctor", "definition": "Another doctor who redirected you to get a second opinion.", "image": ""},
+    {
+      "term": "Referring Doctor", 
+      "definition": "Another doctor who redirected you to get a second opinion.", 
+      "image": ""
+    },
     
-    {"term": "Sleep Apnea", "definition": "When you stop breathing for 10 seconds or more when you sleep.", "image": ""},
+    {
+      "term": "Sleep Apnea", 
+      "definition": "When you stop breathing for 10 seconds or more when you sleep.", 
+      "image": ""
+    },
     
-    {"term": "Thyroid", "definition": "A gland in your neck that is shaped like a butterfly. It makes hormones that help your body work normally.", "image": ""},
+    {
+      "term": "Thyroid", 
+      "definition": "A gland in your neck that is shaped like a butterfly. It makes hormones that help your body work normally.", 
+      "image": ""
+    },
     
-    {"term": "Version Code", "definition": "2-letter code at the end of the health number on an Ontario Health Card.", "image": ""},
+    {
+      "term": "Version Code", 
+      "definition": "2-letter code at the end of the health number on an Ontario Health Card.", 
+      "image": ""
+    },
     
-    {"term": "WSIB", "definition": "Workplace Safety and Insurance Board", "image": ""}
+    {
+      "term": "WSIB", 
+      "definition": "Workplace Safety and Insurance Board", 
+      "image": ""
+    }
   ]
