@@ -1,27 +1,21 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <style>
-          input {
-            display: block;
-            width: 170px;
-            height: 7px;
-            padding: 4px;
-            margin-bottom: 4px;
-
-
-          }
-        </style>
-      </head>
+    <link rel="stylesheet" href="styles.css">
+    </head>
      
 
-      <body class = "box">
+ 
+  
+
+      <div class="content">
+      <body >
         <form id="autofillForm">
-          <p>
+          
             <p>First Name: </p> 
           <input type="text" id="firstName" placeholder="First Name" />
-          <p>Middle Name: </p>
-          <input type="text" id="middleName" placeholder="Middle Name" />
+          <!-- <p>Middle Name: </p>
+          <input type="text" id="middleName" placeholder="Middle Name" /> -->
           <p>Last Name: </p>
           <input type="text" id="lastName" placeholder="Last Name" />
           
@@ -40,12 +34,14 @@
           <p>Weight (kg):</p>
           <input type="text" id="weight" placeholder="Weight (kg)"/>
 
-        </p>
+    
 
           <button type="submit">Save</button>
           <button id="autofillButton">Autofill</button>
         </form>
         <script src="popup.js"></script>
       </body>
+
+    </div>
 
 </html>
