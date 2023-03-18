@@ -1,4 +1,4 @@
-const medicalTerms = [
+export const medicalTerms = [
     // A
     {term: 'Allergies', definition: 'An abnormal reaction of the immune system to a harmless substance.'},
     {term: 'Angina', definition: 'Chest pain or discomfort that you feel when there is not enough blood flowing to your heart.'},
