@@ -1,3 +1,8 @@
+header{
+    display: flex;
+}
+
+
 .highlighted-term {
     background-color: yellow;
   }
@@ -30,6 +35,20 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: larger;
     font-weight: bold;
+    display: inline-block;
+    align-items: center;
+    margin: 0;
+    vertical-align: middle;
+  }
+
+  .logo-container {
+    display: inline-block;
+  vertical-align: middle;
+  }
+
+  .logo{
+    height: 45px;
+    width: 45px;
   }
 
 
