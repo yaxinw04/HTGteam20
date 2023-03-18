@@ -3,6 +3,18 @@
     <head>
     <link rel="stylesheet" href="styles.css">
     </head>
+        <style>
+          input {
+            
+            display: block;
+            width: 170px;
+            height: 7px;
+            padding: 4px;
+            margin-bottom: 4px;
+            
+          }
+        </style>
+      </head>
      
 
  
@@ -24,9 +36,6 @@
           
           <p>Date of Birth (mm/dd/yyyy): </p>
           <input type="text" id="dob" placeholder="Date of Birth mm/dd/yyyy" />
-<!-- 
-          <p>Expiration Date of Health Card (mm/dd/yyyy): </p>
-          <input type="text" id="expDate" placeholder="Expiration Date mm/dd/yyyy" /> -->
           
           <p>Height (cm):</p>
           <input type="text" id="height" placeholder="Height (cm)"/>
@@ -35,6 +44,12 @@
           <input type="text" id="weight" placeholder="Weight (kg)"/>
 
     
+          <p>Address:</p>
+          <input type="text" id="streetAddress" placeholder="Street Address"/>
+          <input type="text" id="city" placeholder="City"/>
+          <input type="text" id="postal" placeholder="Postal Code"/>
+
+        </p>
 
           <button type="submit">Save</button>
           <button id="autofillButton">Autofill</button>
