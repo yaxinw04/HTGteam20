@@ -124,4 +124,15 @@ function attachSpeakButtonEvent(tooltip) {
   });
 }
 
-highlightTerms(medicalTerms);
+function fetchAndHighlightTerms() {
+  fetch(chrome.runtime.getURL('medical_terms.json'))
+    .then(response => response.json())
+    .then(terms => {
+      highlightTerms(terms);
+    })
+    .catch(error => {
+      console.error('Error fetching medical terms:', error);
+    });
+}
+
+fetchAndHighlightTerms();
