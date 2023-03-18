@@ -33,7 +33,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   });
   
 
-  function createTooltip(term, definition) {
+  function createTooltip(term, definition, imageSource = "") {
     const tooltip = document.createElement("div");
     tooltip.className = "medical-term-tooltip"; // in styles.css file
     // html for the button, term in bold followed by definition plus button which is created with class speakDefinition
@@ -103,10 +103,11 @@ function attachSpeakButtonEvent(tooltip) {
 
   const selection = window.getSelection();
 
-  rangeList.forEach(({ range, definition }) => {
+  rangeList.forEach(({ range, definition, image }) => {
     const span = document.createElement('span');
     span.classList.add('highlighted-term');
     span.setAttribute('data-definition', definition);
+    span.setAttribute('image-source', image);
     range.surroundContents(span);
     selection.removeAllRanges();
   });
@@ -116,9 +117,9 @@ function attachSpeakButtonEvent(tooltip) {
   highlightedTerms.forEach((element) => {
     const term = element.textContent;
     const definition = element.getAttribute("data-definition");
-
+    const imageSource = element.getAttribute('image-source');
     element.addEventListener("mouseover", () => {
-      const tooltip = createTooltip(term, definition);
+      const tooltip = createTooltip(term, definition, imageSource);
       tooltip.style.top = `${element.getBoundingClientRect().top + window.scrollY + 20}px`;
       tooltip.style.left = `${element.getBoundingClientRect().left + window.scrollX}px`;
       document.body.appendChild(tooltip);
