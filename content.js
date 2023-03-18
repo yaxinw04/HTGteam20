@@ -35,14 +35,23 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   });
   
 
-  function createTooltip(term, definition, imageSource = "") {
+  function createTooltip(term, definition, imageSource) {
     const tooltip = document.createElement("div");
     tooltip.className = "medical-term-tooltip"; // in styles.css file
     // html for the button, term in bold followed by definition plus button which is created with class speakDefinition
-    tooltip.innerHTML = `
+    if (imageSource == "") {
+      tooltip.innerHTML = `
       <strong>${term}:</strong> ${definition}
-      <button class="speak-definition">Speak</button>
-    `;
+      <img src="speaker.png" class="speak-definition" title="Speak"/>
+      `;
+    } else {
+      tooltip.innerHTML = `
+      <strong>${term}:</strong> ${definition}
+      <img src="speaker.png" class="speak-definition" title="Speak"/>
+      <img src=${imageSource} />
+      `;
+    }
+    
     return tooltip;
   }
   
