@@ -3,15 +3,15 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.action === "autofill") {
       // retrieves data under firstName and lastName keys, data is object with the keys and their values
       chrome.storage.sync.get(
-        ["firstName", "lastName", "healthCardNumber", "dob", "expDate"],
+        ["firstName", "lastName", "healthCardNumber", "dob", "height", "weight"],
         (data) => {
           // Find the input fields in the form
           const firstNameInput = document.getElementById("input_2_68_3");
           const lastNameInput = document.getElementById("input_2_68_6");
           const healthCardNumberInput = document.getElementById("input_2_2");
           const dobInput = document.getElementById("input_2_14");
-          const expDate = document.getElementById("input_2_9");
-
+          const heightInput = document.getElementById("input_2_15");
+          const weightInput = document.getElementById("input_2_16")
   
           // Autofill the input fields
           // if firstNameInput is html element, it sets the value of firstName to data.firstName
@@ -19,8 +19,8 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
           if (lastNameInput) lastNameInput.value = data.lastName || "";
           if (healthCardNumberInput) healthCardNumberInput.value = data.healthCardNumber || "";
           if (dobInput) dobInput.value = data.dob || "";
-          if (expDateInput) expDateInput.value = data.expDate || "";
-
+          if (heightInput) heightInput.value = data.height || "";
+          if (weightInput) weightInput.value = data.weight || "";
 
         }
       );
@@ -65,11 +65,6 @@ function attachSpeakButtonEvent(tooltip) {
       speakDefinition(definitionText);
     });
   }
-
-  const medicalTerms = [
-    { term: 'allergies', definition: 'An abnormal reaction of the immune system to a harmless substance.' },
-    { term: 'medication', definition: 'Substances used to treat, manage, or prevent medical conditions.' }
-  ];
 
   function highlightTerms(terms) {
     // creates treewalker filtering out script and styles tags
