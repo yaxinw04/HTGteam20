@@ -12,13 +12,26 @@
 
       <body>
         <form id="autofillForm">
-            <input type="text" id="firstName" placeholder="First Name" />
-            <input type="text" id="lastName" placeholder="Last Name" />
-            <input type="text" id="healthCardNumber" placeholder="Health Card Number" />
-
+          <p>First Name: </p> 
+          <input type="text" id="firstName" placeholder="First Name" />
+          <p>Middle Name: </p>
+          <input type="text" id="middleName" placeholder="Middle Name" />
+          <p>Last Name: </p>
+          <input type="text" id="lastName" placeholder="Last Name" />
+          
+          <p>Health Card Number: </p>
+          <input type="text" id="healthCardNumber" placeholder="Health Card Number" />
+          
+          <p>Version Code: </p>
+          <input type="text" id="versionCode" placeholder="Version Code" />
+          
+          
+          
+          
+          
           <button type="submit">Save</button>
+          <button id="autofillButton">Autofill</button>
         </form>
-        <button id="autofillButton">Autofill</button>
         <script src="popup.js"></script>
       </body>
 
