@@ -1,11 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
     chrome.storage.sync.get(
-      ["firstName", "lastName", "healthCardNumber", "dob"],
+      ["firstName", "lastName", "healthCardNumber", "dob", "expDate"],
       (result) => {
         document.getElementById("firstName").value = result.firstName || ""; // sets value of html element firstName to result.firstName
         document.getElementById("lastName").value = result.lastName || "";
         document.getElementById("healthCardNumber").value = result.healthCardNumber || "";
         document.getElementById("dob").value = result.dob|| "";
+        document.getElementById("expDate").value = result.expDate|| "";
+
 
       }
     );
@@ -18,9 +20,12 @@ document.addEventListener("DOMContentLoaded", () => {
       const lastName = document.getElementById("lastName").value;
       const healthCardNumber = document.getElementById("healthCardNumber").value;
       const dob = document.getElementById("dob").value;
+      const expDate = document.getElementById("expDate").value;
+
+
 
   
-      chrome.storage.sync.set({ firstName, lastName, healthCardNumber, dob}, () => {
+      chrome.storage.sync.set({ firstName, lastName, healthCardNumber, dob, expDate}, () => {
           // window.close();
       });
     });
