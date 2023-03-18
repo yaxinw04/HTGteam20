@@ -1,11 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
     chrome.storage.sync.get(
-      ["firstName", "lastName", "healthCardNumber", "dob"],
+      ["firstName", "lastName", "healthCardNumber", "dob", "height", "weight"],
       (result) => {
         document.getElementById("firstName").value = result.firstName || ""; // sets value of html element firstName to result.firstName
         document.getElementById("lastName").value = result.lastName || "";
         document.getElementById("healthCardNumber").value = result.healthCardNumber || "";
         document.getElementById("dob").value = result.dob|| "";
+        document.getElementById("height").value = result.height || "";
+        document.getElementById("weight").value = result.weight || "";
 
       }
     );
@@ -18,11 +20,11 @@ document.addEventListener("DOMContentLoaded", () => {
       const lastName = document.getElementById("lastName").value;
       const healthCardNumber = document.getElementById("healthCardNumber").value;
       const dob = document.getElementById("dob").value;
+      const height = document.getElementById("height").value;
+      const weight = document.getElementById("weight").value;
 
   
-      chrome.storage.sync.set({ firstName, lastName, healthCardNumber, dob}, () => {
-          // window.close();
-      });
+      chrome.storage.sync.set({ firstName, lastName, healthCardNumber, dob, height, weight});
     });
   
     document.getElementById("autofillButton").addEventListener("click", () => {
