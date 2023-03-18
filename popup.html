@@ -4,15 +4,21 @@
         <style>
           input {
             display: block;
-            margin-bottom: 10px;
+            width: 170px;
+            height: 7px;
+            padding: 4px;
+            margin-bottom: 4px;
+
+
           }
         </style>
       </head>
      
 
-      <body>
+      <body class = "box">
         <form id="autofillForm">
-          <p>First Name: </p> 
+          <p>
+            <p>First Name: </p> 
           <input type="text" id="firstName" placeholder="First Name" />
           <p>Middle Name: </p>
           <input type="text" id="middleName" placeholder="Middle Name" />
@@ -33,6 +39,8 @@
 
           <p>Weight (kg):</p>
           <input type="text" id="weight" placeholder="Weight (kg)"/>
+
+        </p>
 
           <button type="submit">Save</button>
           <button id="autofillButton">Autofill</button>

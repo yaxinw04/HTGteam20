@@ -13,5 +13,9 @@
   
   .medical-term-tooltip button.speak-definition {
     display: inline-block;
-    margin-left: 5px;
+    margin-left: 2px;
+  }
+
+  .box{
+
   }
