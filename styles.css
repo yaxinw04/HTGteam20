@@ -17,9 +17,17 @@
   }
 
   .content{
-    height: 400px; 
+    height: 300px; 
+    width: 250px;
     overflow: auto;
     border-radius: 1px;
     margin-top: 5px;
     margin-left: 3px;
+    font-weight: bold;
   }
+
+  #maintitle{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+
+
