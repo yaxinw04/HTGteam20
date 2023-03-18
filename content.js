@@ -3,7 +3,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.action === "autofill") {
       // retrieves data under firstName and lastName keys, data is object with the keys and their values
       chrome.storage.sync.get(
-        ["firstName", "lastName", "healthCardNumber", "dob", "height", "weight", "streetAddress", "city", "postal"],
+        ["firstName", "lastName", "healthCardNumber", "dob", "height", "weight", "streetAddress", "city", "postal", "phone"],
         (data) => {
           // Find the input fields in the form
           const firstNameInput = document.getElementById("input_2_68_3");
@@ -15,9 +15,10 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
           const streetAddressInput = document.getElementById("input_2_18");
           const cityInput = document.getElementById("input_2_19");
           const postalInput = document.getElementById("input_2_20");
+          const phoneInput = document.getElementById("input_2_24");
   
           // Autofill the input fields
-          // if firstNameInput is html element, it sets the value of firstName to data.firstName
+          // if firstNameInput is html element, it sets the value of firstNameInput to data.firstName
           if (firstNameInput) firstNameInput.value = data.firstName || "";
           if (lastNameInput) lastNameInput.value = data.lastName || "";
           if (healthCardNumberInput) healthCardNumberInput.value = data.healthCardNumber || "";
@@ -27,13 +28,14 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
           if (streetAddressInput) streetAddressInput.value = data.streetAddress || "";
           if (cityInput) cityInput.value = data.city || "";
           if (postalInput) postalInput.value = data.postal || "";
+          if (phoneInput) phoneInput.value = data.phone || "";
         }
       );
     }
   });
   
 
-  function createTooltip(term, definition) {
+  function createTooltip(term, definition, imageSource = "") {
     const tooltip = document.createElement("div");
     tooltip.className = "medical-term-tooltip"; // in styles.css file
     // html for the button, term in bold followed by definition plus button which is created with class speakDefinition
@@ -103,10 +105,11 @@ function attachSpeakButtonEvent(tooltip) {
 
   const selection = window.getSelection();
 
-  rangeList.forEach(({ range, definition }) => {
+  rangeList.forEach(({ range, definition, image }) => {
     const span = document.createElement('span');
     span.classList.add('highlighted-term');
     span.setAttribute('data-definition', definition);
+    span.setAttribute('image-source', image);
     range.surroundContents(span);
     selection.removeAllRanges();
   });
@@ -116,9 +119,9 @@ function attachSpeakButtonEvent(tooltip) {
   highlightedTerms.forEach((element) => {
     const term = element.textContent;
     const definition = element.getAttribute("data-definition");
-
+    const imageSource = element.getAttribute('image-source');
     element.addEventListener("mouseover", () => {
-      const tooltip = createTooltip(term, definition);
+      const tooltip = createTooltip(term, definition, imageSource);
       tooltip.style.top = `${element.getBoundingClientRect().top + window.scrollY + 20}px`;
       tooltip.style.left = `${element.getBoundingClientRect().left + window.scrollX}px`;
       document.body.appendChild(tooltip);
