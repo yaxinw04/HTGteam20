@@ -9,7 +9,7 @@
   },
 
   "icons": {
-    "128": "logo-social (5).png"
+    "128": "icon.png"
   },
   "content_scripts": [
     {
