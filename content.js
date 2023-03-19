@@ -43,20 +43,12 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     const imageUrl = chrome.runtime.getURL(imageSource);
 
     // html for the button, term in bold followed by definition plus button which is created with class speakDefinition
-   // if (imageSource == "") {
-      tooltip.innerHTML = `
-      <strong>${term}:</strong> ${definition}
-      <img src="${speakerIconUrl}" class="speak-definition" title="Speak"/>
-      <img src="${imageUrl}" class="tooltip-image" />
-      `;
-     /*else {
-      tooltip.innerHTML = `
-      <strong>${term}:</strong> ${definition}
-      <img src="${speakerIconUrl}" class="speak-definition" title="Speak"/>
-      <img src=${imageSource} />
-      `;
-    }
-    */
+    tooltip.innerHTML = `
+    <strong>${term}:</strong> ${definition}
+    <img src="${speakerIconUrl}" class="speak-definition" title="Speak"/>
+    <img src="${imageUrl}" class="tooltip-image" />
+    `;
+
     return tooltip;
   }
   
