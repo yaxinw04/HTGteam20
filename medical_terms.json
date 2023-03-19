@@ -54,9 +54,16 @@
     {
       "term": "Hypertension", 
       "definition": "High blood pressure", 
-      "image": ""},
+      "image": ""
+    },
 
     {
+        "term": "Health Card Number", 
+        "definition": "", 
+        "image": "OHIP_card.png"},
+
+    {
+      
       "term": "immunization", 
       "definition": "Giving a person a vaccine to protect them against a disease.", 
       "image": ""},
@@ -114,7 +121,7 @@
     {
       "term": "Version Code", 
       "definition": "2-letter code at the end of the health number on an Ontario Health Card.", 
-      "image": ""
+      "image": "OHIP_card.png"
     },
     
     {

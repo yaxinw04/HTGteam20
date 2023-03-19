@@ -38,20 +38,25 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   function createTooltip(term, definition, imageSource) {
     const tooltip = document.createElement("div");
     tooltip.className = "medical-term-tooltip"; // in styles.css file
+
+    const speakerIconUrl = chrome.runtime.getURL("speaker.png");
+    const imageUrl = chrome.runtime.getURL(imageSource);
+
     // html for the button, term in bold followed by definition plus button which is created with class speakDefinition
-    if (imageSource == "") {
+   // if (imageSource == "") {
       tooltip.innerHTML = `
       <strong>${term}:</strong> ${definition}
-      <img src="speaker.png" class="speak-definition" title="Speak"/>
+      <img src="${speakerIconUrl}" class="speak-definition" title="Speak"/>
+      <img src="${imageUrl}" class="tooltip-image" />
       `;
-    } else {
+     /*else {
       tooltip.innerHTML = `
       <strong>${term}:</strong> ${definition}
-      <img src="speaker.png" class="speak-definition" title="Speak"/>
+      <img src="${speakerIconUrl}" class="speak-definition" title="Speak"/>
       <img src=${imageSource} />
       `;
     }
-    
+    */
     return tooltip;
   }
   
@@ -96,7 +101,7 @@ function attachSpeakButtonEvent(tooltip) {
 
   while (walker.nextNode()) {
     const node = walker.currentNode;
-    terms.forEach(({ term, definition }) => {
+    terms.forEach(({ term, definition, image }) => {
       const regex = new RegExp('\\b' + term + '\\b', 'gi'); // create regex expression of term, so it's not case sensitive
       let match;
       while ((match = regex.exec(node.textContent)) !== null) {
@@ -107,6 +112,7 @@ function attachSpeakButtonEvent(tooltip) {
         rangeList.push({
           range,
           definition,
+          imageSource: image
         });
       }
     });
@@ -114,11 +120,11 @@ function attachSpeakButtonEvent(tooltip) {
 
   const selection = window.getSelection();
 
-  rangeList.forEach(({ range, definition, image }) => {
+  rangeList.forEach(({ range, definition, imageSource }) => {
     const span = document.createElement('span');
     span.classList.add('highlighted-term');
     span.setAttribute('data-definition', definition);
-    span.setAttribute('image-source', image);
+    span.setAttribute('image-source', imageSource);
     range.surroundContents(span);
     selection.removeAllRanges();
   });

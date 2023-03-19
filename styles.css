@@ -18,14 +18,11 @@ header{
     font-size: medium;
   }
   
-  .medical-term-tooltip button.speak-definition {
-    display: inline-block;
-    margin-left: 2px;
-    size-adjust: 70%;
-    margin-top: 4px;
-    background-color: blue;
-    
-    
+  .speak-definition {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle; 
+    cursor: pointer; /* Change the cursor to indicate the image is clickable */
   }
 
   .content{
@@ -57,6 +54,12 @@ header{
   .logo{
     height: 50px;
     width: 50px;
+  }
+
+  .tooltip-image{
+    width: 275px;
+    height: auto;
+    margin: 10px 0;
   }
 
 

@@ -21,7 +21,7 @@
 
   "web_accessible_resources": [
     {
-      "resources": ["medical_terms.json"],
+      "resources": ["medical_terms.json", "speaker.png", "OHIP_card.png"],
       "matches": ["https://*/*"]
     }
   ]
